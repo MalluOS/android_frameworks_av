@@ -36,7 +36,6 @@ cc_library_shared {
         "libnetd_client",
         "libpowermanager",
         "libstagefright",
-        "libstagefright_wfd",
         "libstagefright_foundation",
         "libstagefright_httplive",
         "libutils",
@@ -74,5 +73,12 @@ cc_library_shared {
         cfi: true,
     },
 
+    product_variables: {
+        lineage: {
+            uses_legacy_wfd: {
+                shared_libs: ["libstagefright_wfd"],
+            },
+        },
+    },
 }
 
