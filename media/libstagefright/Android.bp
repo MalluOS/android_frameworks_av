@@ -119,6 +119,7 @@ cc_library {
         "ACodec.cpp",
         "ACodecBufferChannel.cpp",
         "AACWriter.cpp",
+        "AHierarchicalStateMachine.cpp",
         "AMRWriter.cpp",
         "AudioPlayer.cpp",
         "AudioSource.cpp",
@@ -165,7 +166,6 @@ cc_library {
         "StagefrightMediaScanner.cpp",
         "StagefrightMetadataRetriever.cpp",
         "StagefrightPluginLoader.cpp",
-        "SurfaceMediaSource.cpp",
         "SurfaceUtils.cpp",
         "Utils.cpp",
         "ThrottledSource.cpp",
@@ -248,6 +248,13 @@ cc_library {
         debuggable: {
             // enable experiments only in userdebug and eng builds
             cflags: ["-DENABLE_STAGEFRIGHT_EXPERIMENTS"],
+        },
+
+        lineage: {
+            uses_legacy_wfd: {
+                cflags: ["-DLEGACY_WFD"],
+                srcs: ["SurfaceMediaSource.cpp"],
+            },
         },
     },
 
