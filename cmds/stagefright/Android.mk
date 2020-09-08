@@ -19,6 +19,10 @@ LOCAL_C_INCLUDES:= \
         frameworks/native/include/media/openmax \
         external/jpeg \
 
+ifeq ($(TARGET_USES_LEGACY_WFD),true)
+LOCAL_CFLAGS += -DLEGACY_WFD
+endif
+
 LOCAL_CFLAGS += -Wno-multichar -Werror -Wall
 
 LOCAL_MODULE_TAGS := optional
@@ -117,6 +121,10 @@ LOCAL_C_INCLUDES:= \
         frameworks/av/media/libstagefright \
         frameworks/native/include/media/openmax
 
+ifeq ($(TARGET_USES_LEGACY_WFD),true)
+LOCAL_CFLAGS += -DLEGACY_WFD
+endif
+
 LOCAL_CFLAGS += -Wno-multichar -Werror -Wall
 
 LOCAL_MODULE_TAGS := optional
@@ -140,6 +148,10 @@ LOCAL_SHARED_LIBRARIES := \
 LOCAL_C_INCLUDES:= \
         frameworks/av/media/libstagefright \
         frameworks/native/include/media/openmax
+
+ifeq ($(TARGET_USES_LEGACY_WFD),true)
+LOCAL_CFLAGS += -DLEGACY_WFD
+endif
 
 LOCAL_CFLAGS += -Wno-multichar -Werror -Wall
 

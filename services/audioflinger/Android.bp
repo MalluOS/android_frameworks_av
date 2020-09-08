@@ -70,4 +70,11 @@ cc_library_shared {
         integer_overflow: true,
     },
 
+    product_variables: {
+        lineage: {
+            uses_legacy_wfd: {
+                cflags: ["-DLEGACY_WFD"],
+            },
+        },
+    },
 }
